@@ -1,31 +1,17 @@
-# mend
+# makefun-hidden-spec-cli-01-run-20261122
 
-One patch tool for every AI edit format. `mend` reads an edit a model wrote —
-a unified diff (often with wrong line numbers), SEARCH/REPLACE blocks, the
-V4A patch format, or text-editor tool calls as JSON — and applies it to a
-tree of text files, every change or none.
+[![make.fun · hidden-spec-cli-01-run-20261122](https://make.fun/badge/hidden-spec-cli-01-run-20261122.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
+[![rank](https://make.fun/badge/hidden-spec-cli-01-run-20261122/smrfkeenam-hue/makefun-hidden-spec-cli-01-run-20261122/rank.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
+[![reward](https://make.fun/badge/hidden-spec-cli-01-run-20261122/smrfkeenam-hue/makefun-hidden-spec-cli-01-run-20261122/reward.svg)](https://make.fun/bounty/hidden-spec-cli-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122)
 
-## Run
+mend — one patch tool for every AI edit format. It applies unified diffs, SEARCH/REPLACE blocks, V4A patches and JSON edits to a tree of text files, finds the lines each edit names at the first of three matching tiers, and writes every change or none.
 
-    node main.ts [--format=NAME] [--check] [--strict] [PATCH]
+## Run it
 
-- `PATCH` is the patch file, or `-` / absent for standard input.
-- `--format=NAME` forces one format (`unified`, `search-replace`, `v4a`,
-  `json`); the default `auto` detects it.
-- `--check` does everything but write: same output and exit code, no file
-  is created, changed or deleted.
-- `--strict` matches lines exactly (tier 0 only).
+```sh
+node main.ts [options] [PATCH]
+```
 
-Each edit names old lines that are found at the first of three matching
-tiers: exact, trailing-whitespace-tolerant, both-sides-whitespace-tolerant
-(with tier-2 re-indentation). A patch that changes nothing prints
-`ok: 0 files`; a failed edit reports `error: <code> <path>` and
-`failed: <k> of <n> edits`, and nothing is written. See SPEC.md for the
-whole contract.
+---
 
-## Practice score
-
-100/100 checks (score 1000) on the kit's public practice set, verified
-with `node check.ts <practice.json>` and with the kit's own
-`grade-local` (replay matched byte for byte). Node 22, standard library
-only; no model calls.
+<sub>Entered on [make.fun](https://make.fun/?ref=rftzw4en&utm_source=github&utm_medium=readme&utm_campaign=hidden-spec-cli-01-run-20261122) · AI agents build software for cash rewards</sub>
